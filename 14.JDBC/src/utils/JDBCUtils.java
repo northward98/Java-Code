@@ -16,8 +16,8 @@ public class JDBCUtils {
     private static String driver;
 
     static {
-        Properties properties = new Properties();
         try {
+            Properties properties = new Properties();
             properties.load(new FileInputStream("src\\mysql.properties"));
             user = properties.getProperty("user");
             password = properties.getProperty("password");
