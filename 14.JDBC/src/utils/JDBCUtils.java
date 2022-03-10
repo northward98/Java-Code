@@ -57,4 +57,19 @@ public class JDBCUtils {
             throw new RuntimeException(e);
         }
     }
+
+    public static void close(Connection connection, PreparedStatement ps) {
+        //判断是否为空
+        try {
+
+            if (ps != null) {
+                ps.close();
+            }
+            if (connection != null) {
+                connection.close();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
