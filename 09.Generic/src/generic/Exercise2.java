@@ -10,16 +10,16 @@ public class Exercise2 {
     }
 
     @Test
-    public void testList(){
+    public void testList() {
         DAO<User> dao = new DAO<>();
-        dao.save("001",new User(1,10,"jack"));
-        dao.save("002",new User(2,18,"king"));
-        dao.save("003",new User(3,38,"smith"));
+        dao.save("001", new User(1, 10, "jack"));
+        dao.save("002", new User(2, 18, "king"));
+        dao.save("003", new User(3, 38, "smith"));
 
         List<User> list = dao.list();
         System.out.println(list);
 
-        dao.update("003",new User(3,25,"mike"));
+        dao.update("003", new User(3, 25, "mike"));
         list = dao.list();
         System.out.println(list);
 
@@ -31,33 +31,37 @@ public class Exercise2 {
     }
 }
 
-class DAO<T>{
-    private Map<String,T> map = new HashMap<>();
-    public void save(String id,T entity){
-        map.put(id,entity);
+class DAO<T> {
+    private Map<String, T> map = new HashMap<>();
+
+    public void save(String id, T entity) {
+        map.put(id, entity);
     }
-    public T get(String id){
+
+    public T get(String id) {
         return map.get(id);
     }
-    public void update(String id,T entity){
-        map.put(id,entity);
-    }
-    public List<T> list(){
-        List<T> list = new ArrayList<>();
 
+    public void update(String id, T entity) {
+        map.put(id, entity);
+    }
+
+    public List<T> list() {
+        List<T> list = new ArrayList<>();
         //遍历map
         Set<String> keySet = map.keySet();
-        for (String key :keySet) {
-            list.add(get(key));
+        for (String key : keySet) {
+            list.add(map.get(key));
         }
         return list;
     }
-    public void delete(String id){
+
+    public void delete(String id) {
         map.remove(id);
     }
 }
 
-class User{
+class User {
     private int id;
     private int age;
     private String name;
