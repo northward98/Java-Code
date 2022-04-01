@@ -9,7 +9,7 @@ public class SellTicket {
             @Override
             public void run() {
                 //调用卖票方法
-                for (int i = 0; i < 40; i++) {
+                for (int i = 0; i < 30; i++) {
                     ticket.sale();
                 }
             }
@@ -19,7 +19,7 @@ public class SellTicket {
             @Override
             public void run() {
                 //调用卖票方法
-                for (int i = 0; i < 40; i++) {
+                for (int i = 0; i < 30; i++) {
                     ticket.sale();
                 }
             }
@@ -29,7 +29,7 @@ public class SellTicket {
             @Override
             public void run() {
                 //调用卖票方法
-                for (int i = 0; i < 40; i++) {
+                for (int i = 0; i < 30; i++) {
                     ticket.sale();
                 }
             }
@@ -46,7 +46,7 @@ class Ticket {
     public synchronized void sale() {
         //判断
         if (number > 0) {
-            System.out.println(Thread.currentThread().getName() + "卖出" + "剩下" + (--number));
+            System.out.println(Thread.currentThread().getName() + "卖出，" + "剩下" + (--number));
         }
     }
 }
