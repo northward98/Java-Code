@@ -52,9 +52,9 @@ public class Stream_ {
         //注意 一个Stream只能操作一次，不能断开，否则会报错。
         Stream stream = strings.stream();
         //第一次使用
-        stream.limit(2);
+        //stream.limit(2);
         //第二次使用
-        stream.forEach(System.out::println);
+        //stream.forEach(System.out::println);
         //报错 java.lang.IllegalStateException: stream has already been operated upon or closed
 
         //但是可以这样, 连续使用

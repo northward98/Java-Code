@@ -45,7 +45,7 @@ public class Lambda {
     }
 
     //集合迭代
-    public static void lamndaFor() {
+    public static void lambdaFor() {
         List<String> strings = Arrays.asList("1", "2", "3");
         //传统foreach
         for (String s : strings) {
